@@ -1,0 +1,375 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial;
+}
+
+.header {
+    width: 100%;
+    background: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.container {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+}
+
+/* LOGO */
+
+.logo img {
+    width: 150px;
+}
+
+/* NAVBAR */
+
+.navbar ul {
+    display: flex;
+    list-style: none;
+    gap: 60px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #777777;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s;
+    font: bold 16px/1.5 "Poppins", sans-serif;
+}
+
+.navbar ul li a:hover {
+    color: #ff6b00;
+}
+
+
+/* HEADER ICONS */
+
+.header-icons {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    font-size: 20px;
+}
+
+/* CART */
+
+.cart {
+    position: relative;
+}
+
+.cart span {
+    position: absolute;
+    top: -8px;
+    right: -10px;
+    background: #ff9d2d;
+    color: white;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+/* GREEN MENU CIRCLE */
+.menu-circle {
+    width: 45px;
+    height: 45px;
+    background: #1e9d55;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/* SECTION 1 - FULL SCREEN BANNER */
+
+.banner {
+    width: 100%;
+    height: 100vh;
+    /* full screen height */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.banner-image {
+    width: 100%;
+    height: 100%;
+}
+
+.banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* image fills screen properly */
+    display: block;
+}
+
+/*SECTION 2*/
+.brand-header {
+    text-align: center;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+.brand-header p {
+    font-size: 18px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #222;
+    display: inline-block;
+    position: relative;
+}
+
+/* Left line */
+.brand-header p::before {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background: #ff9d2d;
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-right: 20px;
+    transform: translateY(-50%);
+}
+
+/* Right line */
+.brand-header p::after {
+    content: "";
+    width: 60px;
+    height: 2px;
+    background: #ff9d2d;
+    position: absolute;
+    top: 50%;
+    left: 100%;
+    margin-left: 20px;
+    transform: translateY(-50%);
+}
+
+.brand-area {
+    padding: 110px 0;
+    text-align: center;
+}
+
+.brand-title p {
+    font-size: 20px;
+    margin-bottom: 50px;
+}
+
+.brandSwiper {
+    width: 100%;
+}
+
+.swiper-slide {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 120px;
+    opacity: 0.7;
+    transition: 0.3s;
+}
+
+.swiper-slide img:hover {
+    opacity: 1;
+}
+
+/*SECTION 3*/
+.features-area {
+    position: relative;
+    padding: 120px 0;
+    background-image: url("https://suxnix-dev.myshopify.com/cdn/shop/files/features_bg_8c0db956-8dd7-4361-930d-ee274ba05131.jpg?v=1736613695");
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
+}
+
+/* TOP SHAPE */
+.features-area::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: url("https://suxnix-dev.myshopify.com/cdn/shop/t/2/assets/features_shape01.png") no-repeat top center;
+    background-size: cover;
+}
+
+/* BOTTOM SHAPE */
+.features-area::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 140px;
+    background: url("https://suxnix-dev.myshopify.com/cdn/shop/t/2/assets/features_shape01.png") no-repeat bottom center;
+    background-size: cover;
+    transform: rotate(180deg);
+}
+
+/* CONTENT ABOVE SHAPE */
+.features-area .container {
+    position: relative;
+    z-index: 2;
+}
+/* LAYOUT */
+.features-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 80px;
+}
+
+/* GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px 60px;
+    max-width: 600px;
+}
+
+/* FEATURE BOX */
+.feature-box {
+    color: #fff;
+}
+
+/* ICON */
+.feature-box img {
+    width: 40px;
+    margin-bottom: 15px;
+    filter: brightness(0) saturate(100%) invert(78%) sepia(89%) saturate(450%) hue-rotate(3deg);
+}
+
+/* TITLE */
+.feature-box h4 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+}
+
+/* TEXT */
+.feature-box p {
+    font-size: 14px;
+    line-height: 1.6;
+    color: #d8f5dc;
+}
+
+/* RIGHT IMAGE */
+.features-image img {
+    width: 100%;
+    max-width: 420px;
+}
+
+/*SECTION 4*/
+.products {
+    width: 1200px;
+    margin: auto;
+}
+
+.product-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 120px 0;
+}
+
+.reverse {
+    flex-direction: row-reverse;
+}
+
+.product-image {
+    position: relative;
+    width: 50%;
+    text-align: center;
+    background-image: url("https://suxnix-dev.myshopify.com/cdn/shop/t/2/assets/features_product_dots.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.product-image .main {
+    width: 280px;
+    position: relative;
+    z-index: 2;
+}
+
+.product-image .shape {
+    position: absolute;
+    left: 75px;
+    top: 60%;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    z-index: 1;
+}
+
+
+
+.product-text {
+    width: 45%;
+}
+
+.product-text h2 {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+.product-text h6 {
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.product-text p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.product-bottom {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.btn {
+    background: #1fa64b;
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+}
+
+.btn:hover {
+    background: #FAA432;
+    translate: translateY(-3px);
+}
+
+.price {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.price del {
+    color: orange;
+    margin-left: 10px;
+    font-size: 16px;
+}
