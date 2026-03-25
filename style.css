@@ -355,7 +355,7 @@
     gap: 20px;
 }
 
-.btn {
+.s-btn {
     background: #1fa64b;
     color: white;
     padding: 12px 25px;
@@ -363,7 +363,7 @@
     border-radius: 25px;
 }
 
-.btn:hover {
+.s-btn:hover {
     background: #FAA432;
     translate: translateY(-3px);
 }
@@ -492,7 +492,7 @@
     margin-top: 15px;
 }
 
-.cart-btn {
+.crt-btn {
     position: relative;
     width: 55px;
     height: 55px;
@@ -504,10 +504,15 @@
     cursor: pointer;
     overflow: hidden;
     z-index: 1;
+
+    /* ✅ ADD THIS */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* WAVE EFFECT */
-.cart-btn::before {
+.crt-btn::before {
     content: "";
     position: absolute;
     width: 200%;
@@ -516,14 +521,13 @@
     left: 50%;
     transform: translateX(-50%);
     background: #FAA432;
-    /* hover color */
     border-radius: 50%;
     transition: 0.6s ease;
     z-index: -1;
 }
 
 /* HOVER */
-.cart-btn:hover::before {
+.crt-btn:hover::before {
     top: -30%;
 }
 
@@ -1337,23 +1341,51 @@ button:hover {
 
 
 .footer {
+    position: relative;
+    /* 🔥 MUST ADD */
     background: #0b0b0b;
     color: #aaa;
-    font-family: Arial;
+    margin-top: 120px;
+    /* 🔥 space for shape */
+}
+
+.footer-shape {
+    position: absolute;
+    top: -33px;
+    /* 🔥 upar lane ke liye */
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: url("https://suxnix-dev.myshopify.com/cdn/shop/t/2/assets/footer_bg_shape.png") repeat-x;
+    background-position: top center;
+    /* 🔥 important */
+    z-index: 1;
+}
+
+/* ensure content stays above */
+.footer-top,
+.footer-bottom {
+    position: relative;
+    z-index: 3;
 }
 
 /* SLIDER WRAPPER */
 .insta-slider {
-    max-width: 1200px;   /* control total width */
-    margin: 0 auto;      /* center the slider */
-    padding: 0 20px;     /* small inner spacing */
-    top: auto;
+    max-width: 1200px;
+    /* control total width */
+    margin: 0 auto;
+    /* center the slider */
+    padding: 0 20px;
+    /* small inner spacing */
+    top: -100px;
 }
+
 /* TRACK (MOVING) */
 .insta-track {
     display: flex;
     width: max-content;
-    animation: scroll 25s ease-in-out infinite; /* 🔥 smoother */
+    animation: scroll 25s ease-in-out infinite;
+    /* 🔥 smoother */
 }
 
 /* EACH IMAGE */
@@ -1362,7 +1394,6 @@ button:hover {
     aspect-ratio: 1/1;
     position: relative;
     overflow: hidden;
-    flex-shrink: 0;
 }
 
 .insta-item img {
@@ -1370,6 +1401,12 @@ button:hover {
     height: 100%;
     object-fit: cover;
     transition: 0.4s;
+    display: block;
+
+    filter: none !important;
+    /* 🔥 remove dull effect */
+    opacity: 1 !important;
+    /* 🔥 full brightness */
 }
 
 /* HOVER ZOOM */
@@ -1382,7 +1419,7 @@ button:hover {
     position: absolute;
     top: 0;
     left: 0;
-    background: rgba(0,200,83,0.85);
+    background: rgba(0, 200, 83, 0.85);
     width: 100%;
     height: 100%;
     display: flex;
@@ -1412,13 +1449,16 @@ button:hover {
     from {
         transform: translateX(0);
     }
+
     to {
         transform: translateX(-3);
     }
 }
+
 /* FOOTER TOP */
 .footer-top {
-    padding: 5px 0;
+    position: relative;
+    z-index: 2;
 }
 
 .footer-container {
@@ -1434,13 +1474,35 @@ button:hover {
     margin-bottom: 20px;
 }
 
+/* CONTACT TEXT */
 .footer-col p {
     font-size: 14px;
+    display: flex;
+    /* 🔥 align icon + text */
+    align-items: center;
+    gap: 10px;
+    /* space between icon & text */
+    margin-bottom: 10px;
+}
+
+/* ICON STYLE */
+.footer-col p i {
+    color: #00c853;
+    /* 🔥 green color */
+    font-size: 16px;
+    min-width: 18px;
+    /* 🔥 keeps alignment same */
 }
 
 .footer-col ul {
     list-style: none;
     padding: 0;
+}
+
+.footer-col .logo {
+    width: 160px;
+    /* adjust size here */
+    height: auto;
 }
 
 .footer-col ul li {
